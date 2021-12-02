@@ -4,14 +4,13 @@ const resultDisplay = document.getElementById('result');
 const possibleChoices = document.querySelectorAll('button');
 let userChoice;
 let computerChoice;
-let result;
 
 possibleChoices.forEach((possibleChoice) =>
   possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id;
     userChoiceDisplay.innerHTML = userChoice;
     generateComputerChoice();
-    //getResult();    
+    //getResult();
   })
 );
 
@@ -53,4 +52,5 @@ function generateComputerChoice() {
     }
     resultDisplay.innerHTML = result;
   }
+  getResult();
 }
