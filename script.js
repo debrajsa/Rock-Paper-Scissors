@@ -1,10 +1,18 @@
-// let playerSelection = prompt('Type your choice of rock, paper or scissors.');
+const computerChoiceDisplay = document.getElementById('computer-choice');
+const userChoiceDisplay = document.getElementById('user-choice ');
+const resultDisplay = document.getElementById('result ');
+const possibleChoices = document.querySelectorAll('button ');
+let userChoice;
 
-let playerSelection = 'rock';
-let computerSelection = computerPlay();
+possibleChoices.forEach((possibleChoice) =>
+  possibleChoice.addEventListener('click', (e) => {
+    userChoice = e.target.id;
+    userChoiceDisplay.innerHTML = userChoice;
+    generateComputerChoice();
+  })
+);
 
-function computerPlay() {}
-
-function playGame(playerSelection, computerSelection) {}
-
-playGame(playerSelection, computerSelection);
+function generateComputerChoice() {
+  const randomNumber = Math.floor(Math.random() * 3) + 1; // or you can use possibleChoices.length
+  console.log(randomNumber);
+}
