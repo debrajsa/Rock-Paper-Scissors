@@ -15,7 +15,8 @@ const handleClick = (e) => {
   userChoice = e.target.id;
   userChoiceDisplay.innerHTML = 'user choice: ' + userChoice;
   generateComputerChoice();
-  console.log('clicked');
+  getResult();
+  //console.log('clicked');
 };
 
 const generateComputerChoice = () => {
@@ -32,6 +33,26 @@ for (let i = 0; i < choices.length; i++) {
   rpsgameGrid.appendChild(button);
   console.log(generateComputerChoice.button);
 }
+
+const getResult = () => {
+  switch (userChoice + computerChoice) {
+    case 'scissorspaper':
+    case 'rockscissors':
+    case 'paperrock':
+      resultDisplay.innerHTML = 'YOU WIN!';
+      break;
+    case 'paperscissors':
+    case 'scissorsrock':
+    case 'rockpaper':
+      resultDisplay.innerHTML = 'YOU LOSE!';
+      break;
+    case 'paperpaper':
+    case 'scissorsscissors':
+    case 'rockrock':
+      resultDisplay.innerHTML = 'ITS A DRAW!';
+      break;
+  }
+};
 
 /*
 let userChoice;
