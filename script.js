@@ -6,6 +6,20 @@ const resultDisplay = document.createElement('h1');
 const rpsgameGrid = document.getElementById('rpsgame');
 rpsgameGrid.append(userChoiceDisplay, computerChoiceDisplay, resultDisplay);
 
+const choices = ['rock', 'paper', 'scissors'];
+
+//call a function expression
+const handleClick = () => {
+  console.log('clicked');
+};
+
+for (let i = 0; i < choices.length; i++) {
+  const button = document.createElement('button');
+  button.id = choices[i];
+  button.innerHTML = choices[i];
+  button.addEventListener('click', handleClick);
+  rpsgameGrid.appendChild(button);
+}
 /*
 let userChoice;
 let computerChoice;
