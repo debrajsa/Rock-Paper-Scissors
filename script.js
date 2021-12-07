@@ -7,15 +7,18 @@ const rpsgameGrid = document.getElementById('rpsgame');
 rpsgameGrid.append(userChoiceDisplay, computerChoiceDisplay, resultDisplay);
 
 const choices = ['rock', 'paper', 'scissors'];
+let userChoice;
 
 //call a function expression
-const handleClick = () => {
-  console.log('clicked');
+const handleClick = (e) => {
+  userChoice = e.target.id;
+  userChoiceDisplay.innerHTML = userChoice(rpsgameGrid);
+  //console.log('clicked');
 };
 
 for (let i = 0; i < choices.length; i++) {
   const button = document.createElement('button');
-  button.id = choices[i];
+  button.id = choices[i]; // you can delete this id if you want to use e.target.innerHTML in the handleClick
   button.innerHTML = choices[i];
   button.addEventListener('click', handleClick);
   rpsgameGrid.appendChild(button);
