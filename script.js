@@ -8,12 +8,20 @@ rpsgameGrid.append(userChoiceDisplay, computerChoiceDisplay, resultDisplay);
 
 const choices = ['rock', 'paper', 'scissors'];
 let userChoice;
+let computerChoice;
 
 //call a function expression
 const handleClick = (e) => {
   userChoice = e.target.id;
-  userChoiceDisplay.innerHTML = userChoice(rpsgameGrid);
-  //console.log('clicked');
+  userChoiceDisplay.innerHTML = 'user choice: ' + userChoice;
+  generateComputerChoice();
+  console.log('clicked');
+};
+
+const generateComputerChoice = () => {
+  const randomChoice = choices[Math.floor(Math.random() * choices.length)];
+  computerChoice = randomChoice;
+  computerChoiceDisplay.innerHTML = 'computer choice: ' + computerChoice;
 };
 
 for (let i = 0; i < choices.length; i++) {
@@ -22,7 +30,9 @@ for (let i = 0; i < choices.length; i++) {
   button.innerHTML = choices[i];
   button.addEventListener('click', handleClick);
   rpsgameGrid.appendChild(button);
+  console.log(generateComputerChoice.button);
 }
+
 /*
 let userChoice;
 let computerChoice;
