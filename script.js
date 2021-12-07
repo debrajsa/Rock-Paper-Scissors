@@ -1,4 +1,4 @@
-// eg2: 1. Begin by creating elements
+// eg2: building RPS with mostly JS...used only 1 div in the html file 1. Begin by creating elements
 
 const userChoiceDisplay = document.createElement('h1');
 const computerChoiceDisplay = document.createElement('h1');
