@@ -1,12 +1,7 @@
-// eg2: 1. Begin by creating elements
-
-const userChoiceDisplay = document.createElement('h1');
-const computerChoiceDisplay = document.createElement('h1');
-const resultDisplay = document.createElement('h1');
-const rpsgameGrid = document.getElementById('rpsgame');
-rpsgameGrid.append(userChoiceDisplay, computerChoiceDisplay, resultDisplay);
-
-/*
+const computerChoiceDisplay = document.getElementById('computer-choice');
+const userChoiceDisplay = document.getElementById('user-choice');
+const resultDisplay = document.getElementById('result');
+const possibleChoices = document.querySelectorAll('button');
 let userChoice;
 let computerChoice;
 
@@ -59,4 +54,3 @@ function generateComputerChoice() {
   }
   getResult();
 }
-*/
